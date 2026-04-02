@@ -13,7 +13,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app/ ./app/
+COPY main.py ./app/main.py
+RUN mkdir -p ./app && touch ./app/__init__.py
 
 EXPOSE 8000
 
