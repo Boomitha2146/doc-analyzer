@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: doc-analyzer-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false          # set this in Render dashboard
+      - key: DOC_API_KEY
+        sync: false          # set your chosen API key here
+    healthCheckPath: /health
